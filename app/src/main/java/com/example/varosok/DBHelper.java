@@ -55,17 +55,5 @@ public class DBHelper extends SQLiteOpenHelper {
                 null,null,null,null,null);
     }
 
-    public int torles(String id) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        return db.delete(TABLE_NAME, COL_ID+" = ?", new String[]{id});
-    }
 
-    public int modosit(String id, String nev, String orszag, String lakossag){
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(COL_NEV, nev);
-        values.put(COL_ORSZAG, orszag);
-        values.put(COL_LAKOSSAG, lakossag);
-        return db.update(TABLE_NAME, values,COL_ID+" = ?", new String[]{id});
-    }
 }
